@@ -1,0 +1,23 @@
+<h3> Songs </h3>
+<br><br>
+<h2> Submit a song </h2>
+<%= simple_form_for @song do |f| %>
+  <%= f.input :title %>
+  <%= f.input :artist %>
+  <%= f.input :bpm %>
+  <%= f.input :genre %>
+  <%= f.button :submit %>
+<% end %>
+
+<% if @songs == nil || @songs.empty? %>
+  <p> no songs yet! </p>
+<% else %>
+  <ul>
+  <% @songs.each do |song| %>
+      <li>
+        <%= song.title %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
