@@ -14,10 +14,22 @@
 <% else %>
   <ul>
   <% @songs.each do |song| %>
-      <li>
-        <%= song.title %>
+      <li><p>
+        Title: <%= song.title %> artist: <%= song.artist %>
       </li>
     <% end %>
   </ul>
 <% end %>
+<!-- <div class="colmid">
+<div class="col1">
+col1
+</div>
 
+<div class="col2">
+col2
+</div>
+
+<div class="col3">
+col3
+</div>
+</div> -->
