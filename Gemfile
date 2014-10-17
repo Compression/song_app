@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'foundation-rails'
+gem 'pry-rails'
+gem 'pry-byebug'
 gem 'simple_form'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'

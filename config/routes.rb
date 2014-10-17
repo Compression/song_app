@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :songs
+  get '/search', to: 'recommendations#new'
+  get '/results', to: 'recommendations#show'
+  post '/search', to: 'recommendations#create'
 
-  root "songs#index"
+  root "recommendations#new"
 end
