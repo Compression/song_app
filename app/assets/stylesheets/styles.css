@@ -1,0 +1,41 @@
+.find-new{
+  position:absolute;
+  top:40%;
+  left:30%;
+  bottom:0px;
+}
+
+.find-new input[type="text"]{
+  width:500px;
+  text-align:center;
+}
+
+.results{
+  position:absolute;
+  top:40%;
+  left:30%;
+  bottom:0px;
+}
+
+.centered {
+  position: fixed; /* or absolute */
+  top: 25%;
+  left: 20%;
+  bottom: 80%;
+}
+
+.bottom-corner-right {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding-right: 100px;
+  padding-bottom: 25px;
+}
+
+.logo {
+  font-family: Bauhaus93;
+  font-size: 250%;
+  right: 20%;
+  padding-top: 25px;
+  padding-left: 25px;
+}
