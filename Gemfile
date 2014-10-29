@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'wikipedia-client'
 gem 'foundation-rails'
 gem 'pry-rails'
 gem 'pry-byebug'

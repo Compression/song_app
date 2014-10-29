@@ -3,6 +3,8 @@ class Api
 require "net/http"
 require "json"
 require "open-uri"
+require 'wikipedia'
+
 
   def self.recommend(name)
   api_key = ENV["ECHO_NEST_KEY"]
@@ -27,13 +29,13 @@ require "open-uri"
 
   end
 
-  def self.describe(genre)
-    genre = @recommended_genres.each
-    uri = URI("http://en.wikipedia.org/w/api.php?format=json&action=query&titles=Main%20Page&prop=revisions&rvprop=content")
-    response = Net::HTTP.get(uri)
-    hash = JSON.parse(response)
+  def self.describe
+    @describe = []
+    @recommended_genres.each do |x| #query for x, get result, process result, shovel into variable
 
-    describe = hash
-    binding.pry
+      page = Wikipedia.find( '#{x}' )
+
+      print x
+    end
   end
 end
