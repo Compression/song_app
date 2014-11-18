@@ -29,13 +29,17 @@ require 'wikipedia'
 
   end
 
-  def self.describe
+  def self.describe(genre)
     @describe = []
-    @recommended_genres.each do |x| #query for x, get result, process result, shovel into variable
+    @recommended_genres.each do |x| #query for x, get result, process result, shovel into variable. (https://github.com/kenpratt/wikipedia-client)
 
       page = Wikipedia.find( '#{x}' )
 
-      print x
+      @describe << page.content
+
     end
+    binding.pry
+    print @describe
   end
+
 end
