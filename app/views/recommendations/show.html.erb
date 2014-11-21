@@ -8,7 +8,7 @@
 
 <div class ="results">
   <% @recommendation.each do |x| %>
-    <% @describe.each do |y| %>
+    <% describe.each do |y| %>
       <%= link_to x, "http://lmgtfy.com/?q=#{x}+music" %><br>
       <%= y %>
     <% end %>
