@@ -5,6 +5,7 @@ class RecommendationsController < ApplicationController
   end
 
   def create
+
     @recommendation = Api.recommend(params[:name])
 
     render "show"
@@ -15,7 +16,6 @@ class RecommendationsController < ApplicationController
   end
 
   def show
-     @recommendation
-     @describe
+     @describe = genre_descriptions
   end
 end

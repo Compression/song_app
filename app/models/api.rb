@@ -21,8 +21,9 @@ class Api
       recommended_genres = hash["response"]["terms"].map{|gen| gen["name"]}
       genre_descriptions = describe(recommended_genres.take(3))
     else
-      recommended_genres = [1,2,3] #this is in case it returns nothing
+      describe(['Polka','Waltz','Gangster Rap']) #this is in case it returns nothing
     end
+
   end
 
   def self.describe(genres)
@@ -30,11 +31,12 @@ class Api
 
     genres.each do |genre| #(https://github.com/kenpratt/wikipedia-client)
       page = Wikipedia.find(genre)
-      genre_descriptions[genre] = ActionView::Base.full_sanitizer.sanitize(page.sanitized_content[0...2000]).split(" ").first(200).join(" ") + "..."
+      genre_descriptions[genre] = ActionView::Base.full_sanitizer.sanitize(page.sanitized_content[0...250]).split(" ").first(200).join(" ") + "..."
     end
 
     # { "House music" => "description of house music", "Techno" => "description of techno", "Big beat" => "fhdajfdasfads" }
 
     genre_descriptions
+
   end
 end
