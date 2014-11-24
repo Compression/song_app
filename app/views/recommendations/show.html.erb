@@ -1,0 +1,20 @@
+<div class="centered">
+  <h6>Based on artists similar to your input,<br>
+   here are some genre's you night be interested in exploring.<br>
+   Click one for more information:</h6>
+</div>
+
+<br>
+
+<div class ="results">
+  <% @recommendation.each do |x| %>
+    <% describe.each do |y| %>
+      <%= link_to x, "http://lmgtfy.com/?q=#{x}+music" %><br>
+      <%= y %>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="bottom-corner-right">
+  <%= image_tag 'http://the.echonest.com/static/img/logos/250x200_lt.gif' %>
+</div>
