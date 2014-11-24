@@ -21,8 +21,9 @@ class Api
       recommended_genres = hash["response"]["terms"].map{|gen| gen["name"]}
       genre_descriptions = describe(recommended_genres.take(3))
     else
-      recommended_genres = [1,2,3] #this is in case it returns nothing
+      recommended_genres = "Sorry, please try again - we're having some trouble." #this is in case it returns nothing
     end
+    recommended_genres
   end
 
   def self.describe(genres)
@@ -36,5 +37,6 @@ class Api
     # { "House music" => "description of house music", "Techno" => "description of techno", "Big beat" => "fhdajfdasfads" }
 
     genre_descriptions
+    binding.pry
   end
 end
