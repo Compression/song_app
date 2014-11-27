@@ -31,7 +31,7 @@ class Api
 
     genres.each do |genre| #(https://github.com/kenpratt/wikipedia-client)
       page = Wikipedia.find(genre)
-      genre_descriptions[genre] = ActionView::Base.full_sanitizer.sanitize(page.sanitized_content[0...250]).split(" ").first(200).join(" ") + "..."
+      genre_descriptions[genre] = ActionView::Base.full_sanitizer.sanitize(page.sanitized_content[0...300]).split(" ").first(200).join(" ") + "..."
     end
 
     # { "House music" => "description of house music", "Techno" => "description of techno", "Big beat" => "fhdajfdasfads" }
